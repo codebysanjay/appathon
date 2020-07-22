@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CallCard extends StatelessWidget {
+class CallCard extends StatefulWidget {
   final String image, name;
   final Function onTap;
 
@@ -17,12 +18,17 @@ class CallCard extends StatelessWidget {
   final double height;
 
   @override
+  _CallCardState createState() => _CallCardState();
+}
+
+class _CallCardState extends State<CallCard> {
+  @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
+    return FlatButton(
+      onPressed: widget.onTap,
       child: Container(
-        width: width * 0.35,
-        height: height * 0.2,
+        width: widget.width * 0.35,
+        height: widget.height * 0.2,
         decoration: BoxDecoration(
           color: Colors.redAccent,
           borderRadius: BorderRadius.circular(20),
@@ -31,11 +37,11 @@ class CallCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              child: Image.asset(image),
-              height: height * 0.1,
+              child: Image.asset(widget.image),
+              height: widget.height * 0.1,
             ),
             Text(
-              name,
+              widget.name,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,

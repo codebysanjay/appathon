@@ -1,7 +1,8 @@
 import 'package:appathon/components/call.dart';
+import 'package:appathon/components/weather.dart';
 import 'package:appathon/support/appbar.dart';
-import 'package:flutter/material.dart';
 import 'package:appathon/support/drawer.dart';
+import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -20,22 +21,29 @@ class Home extends StatelessWidget {
             Container(
                 child: Column(
               children: <Widget>[
-                    GestureDetector(onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => CallMr()));
-                    },
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        child: Text("Xyx"),
-                      ),
-                    ),
-                    Container(),
-                    Container(),
-                    Container(),
-                    Container(),
-                  ],
-                ))
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CallMr()));
+                  },
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    child: Text("Xyx"),
+                  ),
+                ),
+                FlatButton(
+                  child: Text('weather'),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Weather()));
+                  },
+                ),
+                Container(),
+                Container(),
+                Container(),
+              ],
+            ))
           ],
         ),
       ]),
