@@ -1,3 +1,5 @@
+import 'package:appathon/components/call.dart';
+import 'package:appathon/support/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:appathon/support/drawer.dart';
 
@@ -5,7 +7,8 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.tealAccent,
+      appBar: buildAppBar(),
+      backgroundColor: Colors.white,
       drawer: AppDrawer(),
       body: Stack(children: <Widget>[
         Column(
@@ -17,13 +20,22 @@ class Home extends StatelessWidget {
             Container(
                 child: Column(
               children: <Widget>[
-                Container( child:Text("")),
-                Container(),
-                Container(),
-                Container(),
-                Container(),
-              ],
-            ))
+                    GestureDetector(onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => CallMr()));
+                    },
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        child: Text("Xyx"),
+                      ),
+                    ),
+                    Container(),
+                    Container(),
+                    Container(),
+                    Container(),
+                  ],
+                ))
           ],
         ),
       ]),
