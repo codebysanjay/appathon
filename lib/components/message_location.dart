@@ -56,8 +56,12 @@ class _MessageItState extends State<MessageIt> {
               padding: EdgeInsets.only(top: 30),
               child: FlatButton(
                 onPressed: () {
-                  sendMessage(
-                      'It\'s getting Fire Here. I\'m at this location $_location . \n Help Me! ');
+                  if (_location == null) {
+                    throw 'Fetching Data';
+                  } else {
+                    sendMessage(
+                        'It\'s getting Fire Here. I\'m at this location $_location . \n Help Me! ');
+                  }
                 },
                 child: Container(
                   height: height * 0.08,
@@ -102,8 +106,12 @@ class _MessageItState extends State<MessageIt> {
               padding: EdgeInsets.only(top: 30),
               child: FlatButton(
                 onPressed: () {
-                  sendMessage(
-                      'The Earth is shaking Here. I\'m at this location  $_location . \n Help Me! ');
+                  if (_location == null) {
+                    throw 'Fetching Data';
+                  } else {
+                    sendMessage(
+                        'The Earth is shaking Here. I\'m at this location  $_location . \n Help Me! ');
+                  }
                 },
                 child: Container(
                   height: height * 0.08,
@@ -148,8 +156,12 @@ class _MessageItState extends State<MessageIt> {
               padding: EdgeInsets.only(top: 30),
               child: FlatButton(
                 onPressed: () {
-                  sendMessage(
-                      'I\'m met an accident. I\'m at this location $_location . \n Help Me ');
+                  if (_location == null) {
+                    throw 'Fetching Data';
+                  } else {
+                    sendMessage(
+                        'I\'m met an accident. I\'m at this location $_location . \n Help Me ');
+                  }
                 },
                 child: Container(
                   height: height * 0.08,
