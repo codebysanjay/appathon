@@ -1,12 +1,31 @@
 import 'package:appathon/components/call.dart';
+import 'package:appathon/components/loading.dart';
 import 'package:appathon/components/message_location.dart';
 import 'package:appathon/support/appbar.dart';
 import 'package:appathon/support/drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:geolocator/geolocator.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+String lat = "";
+String lon = "";
+
+class _HomeState extends State<Home> {
+  void _getLocation() async {
+    final position = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      lat = '${position.latitude}';
+      lon = '${position.longitude}';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -48,7 +67,7 @@ class Home extends StatelessWidget {
               ),
             ),
             Container(
-              height: height * 0.6,
+              height: height * 0.45,
               width: width * 0.8,
               decoration: BoxDecoration(
                   color: Colors.redAccent,
@@ -62,7 +81,7 @@ class Home extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => CallMr()));
                     },
                     child: Container(
-                      height: height * 0.08,
+                      height: height * 0.1,
                       width: width * 0.75,
                       decoration: BoxDecoration(
                         boxShadow: [
@@ -105,7 +124,7 @@ class Home extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => MessageIt()));
                     },
                     child: Container(
-                      height: height * 0.08,
+                      height: height * 0.1,
                       width: width * 0.75,
                       decoration: BoxDecoration(
                         boxShadow: [
@@ -132,6 +151,50 @@ class Home extends StatelessWidget {
                           ),
                           Text(
                             'Message\nLocation'.toUpperCase(),
+                            style: TextStyle(
+                                color: Colors.redAccent,
+                                fontSize: height * 0.028,
+                                height: 1.04,
+                                fontFamily: 'PalanquinDark'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  FlatButton(
+                    onPressed: () {
+                      _getLocation();
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Loading()));
+                    },
+                    child: Container(
+                      height: height * 0.1,
+                      width: width * 0.75,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            spreadRadius: 1,
+                            blurRadius: 2,
+                            offset: Offset(0, 0), // changes position of shadow
+                          ),
+                        ],
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: Image.asset(
+                              'assets/sun.png',
+                              height: height * 0.05,
+                            ),
+                          ),
+                          Text(
+                            'Get\nweather'.toUpperCase(),
                             style: TextStyle(
                                 color: Colors.redAccent,
                                 fontSize: height * 0.028,
