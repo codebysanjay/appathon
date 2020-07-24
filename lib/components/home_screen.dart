@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                     name: 'Emergency\ncall'.toUpperCase(),
                     image: 'assets/phone1.png',
                   ),
-                  Tooltip(message: "Turn on location",
+                  Tooltip(message: "Turn on location services",
                     child: HomeButton(
 
                       height: height,
