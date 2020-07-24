@@ -16,14 +16,14 @@ class DrawerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 8),
       child: FlatButton(
           onPressed: onPress,
           child: Text(
             name,
             style: TextStyle(
               fontFamily: 'PalanquinDark',
-              fontSize: height * 0.03,
+              fontSize: height * 0.025,
               color: Colors.redAccent,
             ),
           )),
