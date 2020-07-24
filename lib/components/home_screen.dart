@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                           MaterialPageRoute(builder: (context) => CallMr()));
                     },
                     name: 'Emergency\ncall'.toUpperCase(),
-                    image: 'assets/phone.png',
+                    image: 'assets/phone1.png',
                   ),
                   HomeButton(
                     height: height,
@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
                           MaterialPageRoute(builder: (context) => MessageIt()));
                     },
                     name: 'message\nlocation'.toUpperCase(),
-                    image: 'assets/text.png',
+                    image: 'assets/message.png',
                   ),
                 ],
               ),
