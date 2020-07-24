@@ -49,7 +49,7 @@ class HomeButton extends StatelessWidget {
             Text(
               name,
               style: TextStyle(
-                  color: Colors.redAccent,
+                  color: Colors.blueGrey[700],
                   fontSize: height * 0.028,
                   height: 1.03,
                   fontFamily: 'PalanquinDark'),

@@ -11,10 +11,11 @@ class AppDrawer extends StatelessWidget {
     var width = screenSize.width;
     var height = screenSize.height;
     return Drawer(
+
       child: Column(
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: Colors.red),
+            decoration: BoxDecoration(color: Colors.blueGrey[700]),
             height: height * 0.26,
             width: width,
             child: Padding(

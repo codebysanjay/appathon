@@ -33,14 +33,15 @@ class _HomeState extends State<Home> {
     var height = screenSize.height;
     return Scaffold(
       appBar: buildAppBar(),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blueGrey[900],
       drawer: AppDrawer(),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              color: Colors.white,
+
+              color: Colors.blueGrey[900],
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -57,11 +58,12 @@ class _HomeState extends State<Home> {
                         'Emergency\nAlerter'.toUpperCase(),
                         style: TextStyle(
                           height: 1.1,
-                          color: Colors.redAccent,
+                          color: Colors.white,
                           fontFamily: 'PalanquinDark',
                           fontSize: width * 0.075,
                         ),
                       ),
+
                     ],
                   ),
                 ],
@@ -76,7 +78,7 @@ class _HomeState extends State<Home> {
                     begin: Alignment.topLeft,
                     end:Alignment.topRight,
                     colors: [
-                      Colors.redAccent,
+                      Colors.white10,
                       Colors.red[200]
                     ]
                   ),
@@ -104,7 +106,7 @@ class _HomeState extends State<Home> {
                           MaterialPageRoute(builder: (context) => MessageIt()));
                     },
                     name: 'message\nlocation'.toUpperCase(),
-                    image: 'assets/mail.png',
+                    image: 'assets/text.png',
                   ),
                 ],
               ),

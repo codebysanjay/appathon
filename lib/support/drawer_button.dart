@@ -24,7 +24,7 @@ class DrawerButton extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'PalanquinDark',
               fontSize: height * 0.025,
-              color: Colors.redAccent,
+              color: Colors.blueGrey[700],
             ),
           )),
     );

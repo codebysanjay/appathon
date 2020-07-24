@@ -5,7 +5,7 @@ AppBar buildAppBar() {
     title: Text(
       "SERVICES",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),
     ),
-    backgroundColor: Colors.redAccent,
+    backgroundColor: Colors.blueGrey[700],
     elevation: 0,
   );
 }
