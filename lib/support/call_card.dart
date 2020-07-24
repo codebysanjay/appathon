@@ -30,7 +30,7 @@ class _CallCardState extends State<CallCard> {
         width: widget.width * 0.35,
         height: widget.height * 0.2,
         decoration: BoxDecoration(
-          color: Colors.redAccent,
+          color: Colors.blueGrey[900],
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(

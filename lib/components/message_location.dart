@@ -126,7 +126,7 @@ class MessageButton extends StatelessWidget {
             offset: Offset(0, 0), // changes position of shadow
           ),
         ],
-        color: Colors.white,
+        color: Colors.blueGrey[900],
         borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
@@ -136,13 +136,13 @@ class MessageButton extends StatelessWidget {
             child: Image.asset(imagepath,
              // 'assets/fire.png',
               height: height * 0.05,
-              color: Colors.redAccent,
+              color: Colors.white,
             ),
           ),
           Text(
             bText.toUpperCase(),
             style: TextStyle(
-              color: Colors.redAccent,
+              color: Colors.white,
               fontSize: height * 0.028,
               height: 1.03,
               fontFamily: 'PalanquinDark',

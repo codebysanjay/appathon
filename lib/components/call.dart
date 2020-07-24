@@ -26,6 +26,7 @@ class _CallMrState extends State<CallMr> {
     var width = screenSize.width;
     var height = screenSize.height;
     return Scaffold(
+      backgroundColor:Colors.white,
       appBar: buildAppBar(),
       drawer: AppDrawer(),
       body: Container(
@@ -128,7 +129,7 @@ class _CallMrState extends State<CallMr> {
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.redAccent,
+                    color: Colors.blueGrey[800],
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
