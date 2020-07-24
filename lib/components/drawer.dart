@@ -1,4 +1,3 @@
-import 'package:appathon/components/about.dart';
 import 'package:appathon/components/call.dart';
 import 'package:appathon/components/home_screen.dart';
 import 'package:appathon/components/message_location.dart';
@@ -69,14 +68,6 @@ class AppDrawer extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MessageIt()));
             },
             name: 'MESSAGE ALERT',
-          ),
-          DrawerButton(
-            height: height,
-            onPress: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => About()));
-            },
-            name: 'ABOUT',
           ),
         ],
       ),
