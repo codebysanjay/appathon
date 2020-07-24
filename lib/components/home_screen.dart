@@ -40,6 +40,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
+              color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -70,8 +71,17 @@ class _HomeState extends State<Home> {
               height: height * 0.4,
               width: width * 0.8,
               decoration: BoxDecoration(
-                  color: Colors.redAccent,
-                  borderRadius: BorderRadius.circular(20)),
+
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end:Alignment.topRight,
+                    colors: [
+                      Colors.redAccent,
+                      Colors.red[200]
+                    ]
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[

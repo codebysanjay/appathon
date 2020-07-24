@@ -93,20 +93,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.4"
-  http:
-    dependency: "direct main"
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.12.2"
-  http_parser:
-    dependency: transitive
-    description:
-      name: http_parser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.4"
   location_permissions:
     dependency: transitive
     description:
@@ -135,13 +121,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.9.0"
   platform_detect:
     dependency: transitive
     description:
@@ -259,13 +238,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety"
-  weather:
-    dependency: "direct main"
-    description:
-      name: weather
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.0"
 sdks:
   dart: ">=2.9.0-18.0 <2.9.0"
   flutter: ">=1.12.13+hotfix.6 <2.0.0"
