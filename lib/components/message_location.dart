@@ -1,7 +1,7 @@
 import 'dart:io';
 
+import 'package:appathon/components/drawer.dart';
 import 'package:appathon/support/appbar.dart';
-import 'file:///D:/Sanjay/AppDevelopment/appathon/lib/components/drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';

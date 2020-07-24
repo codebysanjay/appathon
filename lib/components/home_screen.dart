@@ -1,7 +1,7 @@
 import 'package:appathon/components/call.dart';
+import 'package:appathon/components/drawer.dart';
 import 'package:appathon/components/message_location.dart';
 import 'package:appathon/support/appbar.dart';
-import 'file:///D:/Sanjay/AppDevelopment/appathon/lib/components/drawer.dart';
 import 'package:appathon/support/home_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
