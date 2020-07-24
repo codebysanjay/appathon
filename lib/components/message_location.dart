@@ -63,7 +63,7 @@ class _MessageItState extends State<MessageIt> {
                         'It\'s getting Fire Here. I\'m at this location $_location . \n Help Me! ');
                   }
                 },
-                child: CallButton(height: height, width: width,imagepath: 'assets/fire.png',bText: "fire emergency",),
+                child: MessageButton(height: height, width: width,imagepath: 'assets/fire.png',bText: "fire emergency",),
               ),
             ),
             Padding(
@@ -77,7 +77,7 @@ class _MessageItState extends State<MessageIt> {
                         'The Earth is shaking Here. I\'m at this location  $_location . \n Help Me! ');
                   }
                 },
-                child:  CallButton(height: height, width: width,imagepath: 'assets/ground.png',bText: "earthquake",),
+                child:  MessageButton(height: height, width: width,imagepath: 'assets/ground.png',bText: "earthquake",),
               ),
             ),
             Padding(
@@ -91,7 +91,7 @@ class _MessageItState extends State<MessageIt> {
                         'I\'m met an accident. I\'m at this location $_location . \n Help Me ');
                   }
                 },
-                child: CallButton(height: height, width: width,imagepath: 'assets/accident.png',bText: "accident",),
+                child: MessageButton(height: height, width: width,imagepath: 'assets/accident.png',bText: "accident",),
               ),
             ),
           ],
@@ -101,8 +101,8 @@ class _MessageItState extends State<MessageIt> {
   }
 }
 
-class CallButton extends StatelessWidget {
-  const CallButton({
+class MessageButton extends StatelessWidget {
+  const MessageButton({
     Key key,
     @required this.height,
     @required this.width,this.imagepath,this.bText
