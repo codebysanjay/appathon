@@ -1,7 +1,6 @@
 import 'package:appathon/components/call.dart';
 import 'package:appathon/components/drawer.dart';
 import 'package:appathon/components/message_location.dart';
-import 'package:appathon/support/appbar.dart';
 import 'package:appathon/support/home_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +31,14 @@ class _HomeState extends State<Home> {
     var width = screenSize.width;
     var height = screenSize.height;
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: AppBar(
+        title: Text(
+          "SERVICES",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+        ),
+        backgroundColor: Colors.blueGrey[700],
+        elevation: 0,
+      ),
       backgroundColor: Colors.blueGrey[900],
       drawer: AppDrawer(),
       body: SafeArea(
@@ -40,7 +46,6 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-
               color: Colors.blueGrey[900],
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +68,6 @@ class _HomeState extends State<Home> {
                           fontSize: width * 0.075,
                         ),
                       ),
-
                     ],
                   ),
                 ],
@@ -73,17 +77,12 @@ class _HomeState extends State<Home> {
               height: height * 0.4,
               width: width * 0.8,
               decoration: BoxDecoration(
-
-                  gradient: LinearGradient(
+                gradient: LinearGradient(
                     begin: Alignment.topLeft,
-                    end:Alignment.topRight,
-                    colors: [
-                      Colors.white10,
-                      Colors.red[200]
-                    ]
-                  ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                    end: Alignment.topRight,
+                    colors: [Colors.white10, Colors.red[200]]),
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[

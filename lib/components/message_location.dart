@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:appathon/components/drawer.dart';
-import 'package:appathon/support/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -46,7 +45,14 @@ class _MessageItState extends State<MessageIt> {
     var width = screenSize.width;
     var height = screenSize.height;
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: AppBar(
+        title: Text(
+          "MESSAGE LOCATION",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+        ),
+        backgroundColor: Colors.blueGrey[700],
+        elevation: 0,
+      ),
       drawer: AppDrawer(),
       body: Center(
         child: Column(
@@ -63,7 +69,12 @@ class _MessageItState extends State<MessageIt> {
                         'It\'s getting Fire Here. I\'m at this location $_location . \n Help Me! ');
                   }
                 },
-                child: MessageButton(height: height, width: width,imagepath: 'assets/fire.png',bText: "fire emergency",),
+                child: MessageButton(
+                  height: height,
+                  width: width,
+                  imagepath: 'assets/fire.png',
+                  bText: "fire emergency",
+                ),
               ),
             ),
             Padding(
@@ -74,10 +85,15 @@ class _MessageItState extends State<MessageIt> {
                     throw 'Fetching Data';
                   } else {
                     sendMessage(
-                        'The Earth is shaking Here. I\'m at this location  $_location . \n Help Me! ');
+                        'I\'m in vicinity of earthquake region. I\'m at this location  $_location . \n Help Me! ');
                   }
                 },
-                child:  MessageButton(height: height, width: width,imagepath: 'assets/ground.png',bText: "earthquake",),
+                child: MessageButton(
+                  height: height,
+                  width: width,
+                  imagepath: 'assets/ground.png',
+                  bText: "earthquake",
+                ),
               ),
             ),
             Padding(
@@ -91,7 +107,12 @@ class _MessageItState extends State<MessageIt> {
                         'I\'m met an accident. I\'m at this location $_location . \n Help Me ');
                   }
                 },
-                child: MessageButton(height: height, width: width,imagepath: 'assets/accident.png',bText: "accident",),
+                child: MessageButton(
+                  height: height,
+                  width: width,
+                  imagepath: 'assets/accident.png',
+                  bText: "accident",
+                ),
               ),
             ),
           ],
@@ -102,15 +123,17 @@ class _MessageItState extends State<MessageIt> {
 }
 
 class MessageButton extends StatelessWidget {
-  const MessageButton({
-    Key key,
-    @required this.height,
-    @required this.width,this.imagepath,this.bText
-  }) : super(key: key);
+  const MessageButton(
+      {Key key,
+      @required this.height,
+      @required this.width,
+      this.imagepath,
+      this.bText})
+      : super(key: key);
 
   final double height;
   final double width;
-  final String imagepath,bText;
+  final String imagepath, bText;
 
   @override
   Widget build(BuildContext context) {
@@ -133,8 +156,9 @@ class MessageButton extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Image.asset(imagepath,
-             // 'assets/fire.png',
+            child: Image.asset(
+              imagepath,
+              // 'assets/fire.png',
               height: height * 0.05,
               color: Colors.white,
             ),

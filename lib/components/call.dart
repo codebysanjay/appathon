@@ -1,5 +1,4 @@
 import 'package:appathon/components/drawer.dart';
-import 'package:appathon/support/appbar.dart';
 import 'package:appathon/support/call_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +25,15 @@ class _CallMrState extends State<CallMr> {
     var width = screenSize.width;
     var height = screenSize.height;
     return Scaffold(
-      backgroundColor:Colors.white,
-      appBar: buildAppBar(),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          "EMERGENCY CALL",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+        ),
+        backgroundColor: Colors.blueGrey[700],
+        elevation: 0,
+      ),
       drawer: AppDrawer(),
       body: Container(
         child: Padding(

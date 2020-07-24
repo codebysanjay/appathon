@@ -2,6 +2,7 @@ import 'package:appathon/components/call.dart';
 import 'package:appathon/components/home_screen.dart';
 import 'package:appathon/components/message_location.dart';
 import 'package:appathon/support/drawer_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -11,7 +12,6 @@ class AppDrawer extends StatelessWidget {
     var width = screenSize.width;
     var height = screenSize.height;
     return Drawer(
-
       child: Column(
         children: <Widget>[
           Container(
@@ -69,6 +69,27 @@ class AppDrawer extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MessageIt()));
             },
             name: 'MESSAGE ALERT',
+          ),
+          DrawerButton(
+            height: height,
+            onPress: () {
+              showDialog(
+                context: context,
+                child: AlertDialog(
+                  title: Text('GUIDE'),
+                  content: Text(
+                      'Turn on Location Service before using the application.'),
+                  actions: <Widget>[
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('OK'))
+                  ],
+                ),
+              );
+            },
+            name: 'GUIDE',
           ),
           DrawerButton(
             height: height,
