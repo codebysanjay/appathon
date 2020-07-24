@@ -32,15 +32,8 @@ class HomeButton extends StatelessWidget {
               offset: Offset(0, 0), // changes position of shadow
             ),
           ],
-          color: Colors.blueGrey[200],
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end:Alignment.topRight,
-            colors:[
-              Colors.grey,
-              Colors.red[100]
-            ]
-          ),
+          color: Colors.white,
+
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
