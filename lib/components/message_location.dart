@@ -63,43 +63,7 @@ class _MessageItState extends State<MessageIt> {
                         'It\'s getting Fire Here. I\'m at this location $_location . \n Help Me! ');
                   }
                 },
-                child: Container(
-                  height: height * 0.08,
-                  width: width * 0.75,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        spreadRadius: 3,
-                        blurRadius: 5,
-                        offset: Offset(0, 0), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Image.asset(
-                          'assets/fire.png',
-                          height: height * 0.05,
-                          color: Colors.redAccent,
-                        ),
-                      ),
-                      Text(
-                        'Fire\nEmergency'.toUpperCase(),
-                        style: TextStyle(
-                          color: Colors.redAccent,
-                          fontSize: height * 0.028,
-                          height: 1.03,
-                          fontFamily: 'PalanquinDark',
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: CallButton(height: height, width: width,imagepath: 'assets/fire.png',bText: "fire emergency",),
               ),
             ),
             Padding(
@@ -113,43 +77,7 @@ class _MessageItState extends State<MessageIt> {
                         'The Earth is shaking Here. I\'m at this location  $_location . \n Help Me! ');
                   }
                 },
-                child: Container(
-                  height: height * 0.08,
-                  width: width * 0.75,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        spreadRadius: 3,
-                        blurRadius: 5,
-                        offset: Offset(0, 0), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Image.asset(
-                          'assets/ground.png',
-                          height: height * 0.05,
-                          color: Colors.redAccent,
-                        ),
-                      ),
-                      Text(
-                        'Earthquake'.toUpperCase(),
-                        style: TextStyle(
-                          color: Colors.redAccent,
-                          fontSize: height * 0.028,
-                          height: 1.03,
-                          fontFamily: 'PalanquinDark',
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child:  CallButton(height: height, width: width,imagepath: 'assets/ground.png',bText: "earthquake",),
               ),
             ),
             Padding(
@@ -163,47 +91,64 @@ class _MessageItState extends State<MessageIt> {
                         'I\'m met an accident. I\'m at this location $_location . \n Help Me ');
                   }
                 },
-                child: Container(
-                  height: height * 0.08,
-                  width: width * 0.75,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        spreadRadius: 3,
-                        blurRadius: 5,
-                        offset: Offset(0, 0), // changes position of shadow
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Image.asset(
-                          'assets/accident.png',
-                          height: height * 0.05,
-                          color: Colors.redAccent,
-                        ),
-                      ),
-                      Text(
-                        'Accident'.toUpperCase(),
-                        style: TextStyle(
-                          color: Colors.redAccent,
-                          fontSize: height * 0.028,
-                          height: 1.03,
-                          fontFamily: 'PalanquinDark',
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: CallButton(height: height, width: width,imagepath: 'assets/accident.png',bText: "accident",),
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CallButton extends StatelessWidget {
+  const CallButton({
+    Key key,
+    @required this.height,
+    @required this.width,this.imagepath,this.bText
+  }) : super(key: key);
+
+  final double height;
+  final double width;
+  final String imagepath,bText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height * 0.08,
+      width: width * 0.75,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            spreadRadius: 3,
+            blurRadius: 5,
+            offset: Offset(0, 0), // changes position of shadow
+          ),
+        ],
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Row(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Image.asset(imagepath,
+             // 'assets/fire.png',
+              height: height * 0.05,
+              color: Colors.redAccent,
+            ),
+          ),
+          Text(
+            bText.toUpperCase(),
+            style: TextStyle(
+              color: Colors.redAccent,
+              fontSize: height * 0.028,
+              height: 1.03,
+              fontFamily: 'PalanquinDark',
+            ),
+          ),
+        ],
       ),
     );
   }

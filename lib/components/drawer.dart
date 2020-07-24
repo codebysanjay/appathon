@@ -1,4 +1,3 @@
-import 'package:appathon/components/about.dart';
 import 'package:appathon/components/call.dart';
 import 'package:appathon/components/home_screen.dart';
 import 'package:appathon/components/message_location.dart';
@@ -73,8 +72,22 @@ class AppDrawer extends StatelessWidget {
           DrawerButton(
             height: height,
             onPress: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => About()));
+              showAboutDialog(
+                context: context,
+                applicationName: 'EMERGENCY\nALERTER',
+                applicationVersion: '\n1.0.0\n',
+                children: [
+                  Text(
+                    'An  app developed for a emergency situation that we are facing.\n Developed as part of IEEE Appathon'
+                        .toUpperCase(),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+                applicationIcon: Image.asset(
+                  'assets/playstore.png',
+                  height: height * 0.08,
+                ),
+              );
             },
             name: 'ABOUT',
           ),
