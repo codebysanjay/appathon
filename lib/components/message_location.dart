@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:appathon/support/appbar.dart';
-import 'package:appathon/support/drawer.dart';
+import 'file:///D:/Sanjay/AppDevelopment/appathon/lib/components/drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -15,7 +15,7 @@ class MessageIt extends StatefulWidget {
 class _MessageItState extends State<MessageIt> {
   String _location = '';
 
-  void _getLocation() async {
+  void getLocation() async {
     final position = await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     setState(() {
@@ -36,7 +36,7 @@ class _MessageItState extends State<MessageIt> {
 
   @override
   void initState() {
-    _getLocation();
+    getLocation();
     super.initState();
   }
 

@@ -1,8 +1,8 @@
 import 'package:appathon/components/call.dart';
-import 'package:appathon/components/loading.dart';
 import 'package:appathon/components/message_location.dart';
 import 'package:appathon/support/appbar.dart';
-import 'package:appathon/support/drawer.dart';
+import 'file:///D:/Sanjay/AppDevelopment/appathon/lib/components/drawer.dart';
+import 'package:appathon/support/home_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Text(
-                        'EmerGency\nAlerter'.toUpperCase(),
+                        'Emergency\nAlerter'.toUpperCase(),
                         style: TextStyle(
                           height: 1.1,
                           color: Colors.redAccent,
@@ -67,7 +67,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              height: height * 0.45,
+              height: height * 0.4,
               width: width * 0.8,
               decoration: BoxDecoration(
                   color: Colors.redAccent,
@@ -75,135 +75,26 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  FlatButton(
+                  HomeButton(
+                    height: height,
+                    width: width,
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => CallMr()));
                     },
-                    child: Container(
-                      height: height * 0.1,
-                      width: width * 0.75,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 0), // changes position of shadow
-                          ),
-                        ],
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            child: Image.asset(
-                              'assets/phone.png',
-                              height: height * 0.05,
-                            ),
-                          ),
-                          Text(
-                            'EMERGENCY\nCALL',
-                            style: TextStyle(
-                                color: Colors.redAccent,
-                                fontSize: height * 0.028,
-                                height: 1.03,
-                                fontFamily: 'PalanquinDark'),
-                          ),
-                        ],
-                      ),
-                    ),
+                    name: 'Emergency\ncall'.toUpperCase(),
+                    image: 'assets/phone.png',
                   ),
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MessageIt()));
-                    },
-                    child: Container(
-                      height: height * 0.1,
-                      width: width * 0.75,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 0), // changes position of shadow
-                          ),
-                        ],
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            child: Image.asset(
-                              'assets/mail.png',
-                              height: height * 0.05,
-                            ),
-                          ),
-                          Text(
-                            'Message\nLocation'.toUpperCase(),
-                            style: TextStyle(
-                                color: Colors.redAccent,
-                                fontSize: height * 0.028,
-                                height: 1.04,
-                                fontFamily: 'PalanquinDark'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  FlatButton(
+                  HomeButton(
+                    height: height,
+                    width: width,
                     onPressed: () {
                       _getLocation();
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Loading()));
+                          MaterialPageRoute(builder: (context) => MessageIt()));
                     },
-                    child: Container(
-                      height: height * 0.1,
-                      width: width * 0.75,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 0), // changes position of shadow
-                          ),
-                        ],
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            child: Image.asset(
-                              'assets/sun.png',
-                              height: height * 0.05,
-                            ),
-                          ),
-                          Text(
-                            'Get\nweather'.toUpperCase(),
-                            style: TextStyle(
-                                color: Colors.redAccent,
-                                fontSize: height * 0.028,
-                                height: 1.04,
-                                fontFamily: 'PalanquinDark'),
-                          ),
-                        ],
-                      ),
-                    ),
+                    name: 'message\nlocation'.toUpperCase(),
+                    image: 'assets/mail.png',
                   ),
                 ],
               ),
@@ -214,12 +105,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-//boxShadow: [
-//BoxShadow(
-//color: Colors.grey.withOpacity(0.5),
-//spreadRadius: 3,
-//blurRadius: 5,
-//offset: Offset(0, 3), // changes position of shadow
-//),
-//],
