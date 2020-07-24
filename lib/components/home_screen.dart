@@ -97,16 +97,19 @@ class _HomeState extends State<Home> {
                     name: 'Emergency\ncall'.toUpperCase(),
                     image: 'assets/phone1.png',
                   ),
-                  HomeButton(
-                    height: height,
-                    width: width,
-                    onPressed: () {
-                      _getLocation();
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MessageIt()));
-                    },
-                    name: 'message\nlocation'.toUpperCase(),
-                    image: 'assets/message.png',
+                  Tooltip(message: "Turn on location",
+                    child: HomeButton(
+
+                      height: height,
+                      width: width,
+                      onPressed: () {
+                        _getLocation();
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => MessageIt()));
+                      },
+                      name: 'message\nlocation'.toUpperCase(),
+                      image: 'assets/message.png',
+                    ),
                   ),
                 ],
               ),
