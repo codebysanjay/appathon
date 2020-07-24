@@ -2,15 +2,12 @@
 
 An disaster management app for IEEE Appathon
 
-## Getting Started
+## EMERGENCY ALERTER
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project is a emergency alerter app.
+We (me and @vaishnavkkl) made this app as part of a appathond conducted by IEEE Trillenium Comepetetion.
+We Coded for 14hr for this app and was made in 2 days.
+This app is very useful in emergency situations.
+In Emergency Situations there may be chances that every one cannot remember the emergency calling numbers or they will not be in a mental state to send their location from accesing it from maps.
+So this application Enables all such features in a single app.
+In such emergency situation a person can send his Location to any number by just one tap and also Can call police or ambulance with the emergency call Numbers from the app by just one press.

@@ -78,7 +78,7 @@ class AppDrawer extends StatelessWidget {
                 child: AlertDialog(
                   title: Text('GUIDE'),
                   content: Text(
-                      'Turn on Location Service before using the application.'),
+                      'Grant Permission for Location Access and Turn on Location Service before using the application.'),
                   actions: <Widget>[
                     FlatButton(
                         onPressed: () {
