@@ -21,5 +21,5 @@ In such emergency situation a person can send his Location to any number by just
       A Flutter geolocation plugin which provides easy access to platform specific location services.
       
 3.  Fonts Used - From Google Fonts<br>
-    `Popins`
+    `Poppins`
     `PalanquinDark`
